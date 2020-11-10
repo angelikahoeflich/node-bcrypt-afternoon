@@ -28,6 +28,7 @@ app.use(
 })
 );
 
+app.get('/auth/logout', authCtrl.logout);
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/login', authCtrl.login);
 
