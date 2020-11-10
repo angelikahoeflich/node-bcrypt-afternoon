@@ -6,7 +6,7 @@ module.exports = {
     const {username, password, isAdmin} = req.body;
     const db = req.app.get('db');
     const result = await db.get_user([username]);
-    const existingUser = username[0];
+    const existingUser = result[0];
     if(existingUser) {
       res.status(409).send('Username taken'); 
     } 
