@@ -34,7 +34,8 @@ app.get('/auth/logout', authCtrl.logout);
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/login', authCtrl.login);
 app.get('/api/treasure/all', 
-auth.usersOnly, treasureCtrl.getAllTreasure);
+auth.usersOnly,
+auth.adminsOnly, treasureCtrl.getAllTreasure);
 app.get('/api/treasure/dragon', treasureCtrl.dragonTreasure);
 app.get('/api/treasure/user', auth.usersOnly, treasureCtrl.getUserTreasure);
 app.post('/api/treasure/user', auth.usersOnly, treasureCtrl.addUserTreasure);
